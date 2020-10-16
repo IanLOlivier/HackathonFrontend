@@ -1,14 +1,30 @@
-<div style="margin: auto; padding: 10px; text-align: center;">
-  <h2>My Talking App</h2>
+<div class="container" style="margin: auto; padding: 10px; text-align: center;">
   <div>
-    <textarea #userInput style="font-size: 15px; padding: 10px;" cols="60" rows="10"></textarea>
+  <h2>GDP Hackathon 2020</h2>
+  </div>
+  <div>
+    <h4>Client Project Spesifications :</h4>
+  </div>
+  <div style="align-content: flex-end;" class="parent">
+    <form>
+      Projectcode: <input #projectcode type="text" [(ngModel)]="projectCode">
+    </form>
+    <form style="padding-top: 15px;"> 
+      Team Size: <input #teamsize type="number" [(ngModel)]="teamSize">
+    </form>
+  </div>
+  <div style="-webkit-box-align: start;">
+    <label >Project Description:</label>
+  </div>
+  <div>
+    <textarea #userInput style="font-size: 15px; padding: 10px; padding-top: 15px;" cols="60" rows="10" [(ngModel)]="description"></textarea>
   </div>
   <div>
     <select [(ngModel)]="selectedVoice">
       <option *ngFor="let voice of voices" [ngValue]="voice">{{voice}}</option>
     </select>
   </div>
-  <div style="margin-top: 10px">
-    <button style="font-size: 15px;" (click)="speakNow(userInput.value)">Speak Now</button>
+  <div style="margin-top: 10px;">
+    <button class="buton" style="font-size: 15px;" (click)="sendData()">Get Team Members</button>
   </div>
 </div>

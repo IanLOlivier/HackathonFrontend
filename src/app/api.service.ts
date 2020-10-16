@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import{ProjectDescriptionDTO} from './projectDescriptionDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class APIService {
 
   constructor(private http:HttpClient) {}
 
-  speak(data) {
+  send(data: ProjectDescriptionDTO) {
     return this.http.post(this.ENDPOINT, data);
   }
 }
